@@ -1,0 +1,19 @@
+header {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 50px 0px;
+}
+
+.header__button {
+	background-color: #83b4eb;
+	border: 2px solid blue;
+	border-radius: 10px;
+	font-size: 40px;
+	text-align: center;
+	width: 35%;
+}
+
+.active {}
+
+.completed {}

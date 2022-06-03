@@ -4,8 +4,8 @@ import Add from './components/Add.js';
 import List from './components/List.js';
 import Header from './components/Header.js';
 import React, { useState } from 'react';
-import TaskDataList from './components/TaskDataList';
-
+import { createTodoTask } from './utils/taskCreator';
+//import TaskDataList from './components/TaskDataList';
 
 function App() {
 /*
@@ -16,17 +16,19 @@ function App() {
 ];
 */
 
-  const [todos, setTodos] = useState(TaskDataList);
-
-
+  const [taskDataList, setTaskDataList] = useState([]);
+  
+  const createTodo = (text) => {
+    if (!(text.trim())) return;
+    const newTask = createTodoTask(text)
+    setTaskDataList([...taskDataList, newTask])
+  }
 
   return (
     <div className="container">
       <Header />
-      <Add />
-      <List 
-        value={todos}
-      />
+      <Add createTodo={createTodo} />
+      <List value={taskDataList} />
     </div>
   );
 }

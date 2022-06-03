@@ -1,35 +1,30 @@
 import React from 'react';
+import styles from './Task.module.css';
 
 
 
 
-
-function Task(value) {
-
-  value = value.value
+function Task(props) {
+  const { value } = props;
   console.log(value)
+
   if (!value) {
-    return
+    return null
   }
-  if (value.active) {
-     return (
-      <div className="list__task">
-        <button className="list_task_completed"></button>
-        <div className="list__task__text">{value.id} {value.text}</div>
-        <button className="list__task__delete"></button>
-      </div>
-    )
-  }
+
 
   return (
-    <div className="list__task">
-      <button className="list_task_completed"></button>
-      <div className="list__task__text finish">{value.id}  {value.text}</div>
-      <button className="list__task__delete"></button>
+    <div className={styles.task}>
+      <button className={styles.task_completed}></button>
+      <div
+        className={`${styles.task_text} ${!value.active ? styles.finish : ''}`}
+      >{value.id}  {value.text}
+      </div>
+      <button className={styles.task_delete}></button>
     </div>
   )
-  
- 
+
+
 }
 
 

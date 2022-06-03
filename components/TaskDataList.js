@@ -1,8 +1,8 @@
 import React from 'react';
 
+/*
 
-
-const TaskDataList = [
+const TaskDataList= [
     {
         "active": true,
         "id": 1,
@@ -25,5 +25,6 @@ const TaskDataList = [
     }
 ];
 
-
 export default TaskDataList;
+
+*/
