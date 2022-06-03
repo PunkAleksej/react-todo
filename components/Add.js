@@ -1,34 +1,5 @@
 import React, { useState } from 'react';
-import TaskCreate from './TaskCreate';
-/*
-const TaskDataList = [];
 
-
-class TaskForm {
-  constructor(text) {
-      this.text = text;
-  }
-  active = true;
-  number = TaskDataList.length + 1;
-}
-
-
-
-
-function TaskCreate() {
-  const input = document.querySelector('input').value;
-  if (!input) {
-    return
-  }
-  
-  let newTask = new TaskForm(input)
-    
-  TaskDataList.push(newTask)
-    
-  console.log(TaskDataList)
-  
-}
-*/
 
 
 
