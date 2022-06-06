@@ -14,12 +14,13 @@ const Add = (props) => {
     setValue(ev.target.value)
   }
 
-  const onSubmit = () => {
-    createTodo(value)
-    setValue('')
+  const onSubmit = (ev) => {
+    ev.preventDefault();
+    createTodo(value);
+    setValue('');
   }
   return (
-    <div className="list__task">
+    <form className="list__task" onSubmit={onSubmit}>
       <input
         className="list__task__text new"
         placeholder="Write new task..."
@@ -27,12 +28,12 @@ const Add = (props) => {
         onChange={onInputChange}
       />
       <button
+        type="submit"
         className="list_task_completed add"
-        onClick={onSubmit}
       >
         Add Task
       </button>
-    </div>
+    </form>
   )
 }
 

@@ -8,11 +8,13 @@ export const sortedTodoTask = (taskDataList, sortPriority) => {
         sortedList.push(element)
       } 
     });
+    /*
     taskDataList.forEach(element => {
       if (element.active === false) {
         sortedList.push(element)
       } 
     });
+    */
   } else {
   
     taskDataList.forEach(element => {
@@ -20,11 +22,13 @@ export const sortedTodoTask = (taskDataList, sortPriority) => {
         sortedList.push(element)
       } 
     });
+    /*
     taskDataList.forEach(element => {
       if (element.active === true) {
         sortedList.push(element)
       } 
     });
+    */
   }
   return sortedList
 }

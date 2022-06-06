@@ -39,3 +39,19 @@
 	background-color: #ccc;
 	color: #979fa1;
 }
+
+
+@media only screen and (max-device-width: 1280px){
+	.task_text {
+		font-size: 20px;
+	}
+	.task_completed {
+		min-width: 32px;
+		min-height: 32px;
+	}
+	.task_delete {
+		min-width: 32px;
+		min-height: 32px;
+	}
+	
+}

@@ -54,3 +54,17 @@
 	background-color: #ccc;
 	color: #979fa1;
 }
+
+
+@media only screen and (max-device-width: 1280px){
+	.add {
+		min-width: 0px;
+		font-size: 20px;
+		width: 30%;
+		background-image: none;
+	}
+	.list__task__text {
+		font-size: 20px;
+	}
+	
+}

@@ -7,6 +7,18 @@ import styles from './Task.module.css';
 function Task(props) {
   const { value, deleteTodo, completeTodo } = props;
 
+  const onTextChange = (ev) => {
+    console.log(1)
+    console.log(ev.target.value)
+  }
+
+  const onTextChange2 = (ev) => {
+    ev.preventDefault();
+    //createTodo(value);
+    //setValue('');
+  }
+
+
 
   const onDelete = () => {
     deleteTodo(value.key)
@@ -27,10 +39,12 @@ function Task(props) {
       >
         {value.key}
       </button>
-      <div
+      <label
         className={`${styles.task_text} ${!value.active ? styles.finish : ''}`}
+        onDoubleClick={onTextChange}
       >{value.id}  {value.text}
-      </div>
+       
+      </label>
       <button 
         className={styles.task_delete}
         onClick={onDelete}>

@@ -4,26 +4,31 @@ import List from './components/List.js';
 import Header from './components/Header.js';
 import React, { useState } from 'react';
 import { createTodoTask } from './utils/taskCreator';
-import { deleteTodoTask } from './utils/taskDelete';
+//import { store } from './store/store';
 import { completeTodoTask } from './utils/taskComplete';
-import { sortedTodoTask } from './utils/sortingTask';
+import { sortedTodoTask } from './utils/sortedTodoTask';
 
 function App() {
-  const [headerInfo, setHeaderInfo] = useState();
+  const [headerInfo, setHeaderInfo] = useState('all');
   const [taskComplete, setTaskComplete] = useState();
   const [taskDataList, setTaskDataList] = useState([]);
   const [taskDelete, setTaskDelete] = useState();
 
 
-  const listSort = (sortPriority) => {
-    const sortedList = sortedTodoTask(taskDataList, sortPriority)
 
-    setTaskDataList([...sortedList])
+
+
+  const listSort = (sortPriority) => {
+    setHeaderInfo(sortPriority)
+
+    //const sortedList = sortedTodoTask(taskDataList, sortPriority)
+    //setTaskDataList([...sortedList])
   }
 
   const completeTodo = (key) => {
     // const completeTarget = completeTodoTask(taskDataList, key)
     // taskDataList[completeTarget].active = false;
+
     const updatedTodoList = taskDataList.map((item) => {
       if (item.key !== key) {
         return item;
@@ -33,14 +38,15 @@ function App() {
         active: false
       }
     })
-    setTaskComplete(updatedTodoList)
+
+    setTaskDataList(updatedTodoList)
   }
 
   const deleteTodo = (key) => {
     // const deleteTarget = deleteTodoTask(taskDataList, key)
     // taskDataList.splice(deleteTarget, 1)
     const updatedTodoList = taskDataList.filter(i => i.key !== key)
-    setTaskDelete(updatedTodoList)
+    setTaskDataList(updatedTodoList)
   }
 
   const createTodo = (text) => {
@@ -58,6 +64,7 @@ function App() {
         value={taskDataList}
         deleteTodo={deleteTodo}
         completeTodo={completeTodo}
+        headerInfo={headerInfo}
       />
     </div>
   );
